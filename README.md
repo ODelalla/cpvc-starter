@@ -1,3 +1,5 @@
+**[See it live →](https://calpolyvibecoding-01.github.io/cpvc-starter/)**
+
 # Your first website — six steps
 
 You are about to have a real website, live on the internet, with your name on
