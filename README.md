@@ -11,11 +11,9 @@ You do not need to install anything. Everything below happens in your browser.
 
 ## Before you start
 
-Two things, both free, both two minutes:
+One thing to have, it's free:
 
 1. A **GitHub account** — [github.com](https://github.com)
-2. Your **Cal Poly ChatGPT** login — go to [chatgpt.com](https://chatgpt.com),
-   click *Log in*, enter your Cal Poly email, choose **Cal Poly San Luis Obispo SSO**
 
 ---
 
@@ -25,7 +23,8 @@ Two things, both free, both two minutes:
 
 It is at the top right of this page. Choose **Create a new repository**.
 
-> _[SCREENSHOT: top of the repo page with the green button circled]_
+<img width="932" height="98" alt="image" src="https://github.com/user-attachments/assets/02747e67-fcc0-496a-ac82-cfd9e24af473" />
+
 
 ### 2. Name it and click **Create repository**
 
@@ -36,7 +35,8 @@ Any name works. `my-first-site` is fine. Leave everything else alone.
 In your new repository: **Settings** → **Pages** (left sidebar) →
 under *Source* choose **Deploy from a branch** → pick **main** → **Save**.
 
-> _[SCREENSHOT: the Pages settings panel with Source set to main]_
+<img width="934" height="477" alt="image" src="https://github.com/user-attachments/assets/e8d430c1-9458-49ec-8711-652a83791d8f" />
+
 
 ### 4. Wait about a minute, then open your site
 
@@ -57,30 +57,80 @@ Go back to your repository, click **index.html**, then click the **pencil icon**
 (top right of the file). Find your name near the top and change it.
 Scroll down and click **Commit changes**.
 
-> _[SCREENSHOT: the pencil / edit icon on a file view]_
+<img width="701" height="259" alt="image" src="https://github.com/user-attachments/assets/10c995b5-198a-433c-9a7f-acbe969d0c6d" />
 
-### 6. Refresh your site
-
-Give it a minute, then refresh. It changed. That loop — edit, commit, refresh —
-is everything you will do for the rest of the semester.
-
----
 
 ## Now the actual session
 
-Open ChatGPT and ask it for a website. Anything you want.
+Open **[Gemini](https://gemini.google.com)** and sign in with a Google
+account. The free version is all you need today.
 
-**If ChatGPT gives you a whole page** (its answer starts with `<!DOCTYPE html>`),
-open `index.html`, select everything, delete it, and paste theirs in. That is
-normal and expected.
+### Round one — the one-liner
 
-**If ChatGPT gives you a piece** — a section, a form, a list — paste it between
-the two clearly marked lines in the middle of `index.html`.
+Ask for a website in one sentence. Anything you want. Then paste the
+constraint block underneath it:
 
-Then do it again, but this time fill in [`SPEC.md`](SPEC.md) first and give
-ChatGPT those six lines instead of a one-line prompt. Compare the two.
+> make me a personal website
+>
+> Give me one complete HTML file. All CSS in a `<style>` tag. You may link
+> one Google Font. No frameworks, no other external files, no build step.
+> Return only the code.
 
-That comparison is the entire lesson.
+Copy the result using the **copy button** on the code block — don't
+click-and-drag, you'll grab the explanation text too. Paste into
+`index.html`, commit, refresh your site.
+
+It'll be okay. Not great. That's the point.
+
+### Round two — the spec
+
+Now fill in [`SPEC.md`](SPEC.md). Six lines. Then:
+
+> Build me a website from this spec:
+> [paste your six lines]
+>
+> Give me one complete HTML file. All CSS in a `<style>` tag. You may link
+> one Google Font. No frameworks, no other external files, no build step.
+> Return only the code.
+
+Same copy, paste, commit, refresh.
+
+**Now compare the two. That comparison is the entire lesson.** Same tool,
+same model, same person. The only thing that changed is that you wrote it
+down first.
+
+### Round three — make it better
+
+One more, and this is the round people skip:
+
+> make the hero full height, tighten the spacing, and use one accent color
+> instead of three
+
+Copy, paste, commit, refresh. Iterating isn't cheating — it's the last step
+of The Loop, and it's where output stops looking generated.
+
+### Where to paste
+
+**If Gemini gives you a whole page** — the answer starts with
+`<!DOCTYPE html>` — open `index.html`, select everything, delete it, paste
+theirs in. Normal and expected.
+
+**If Gemini gives you a piece** — a section, a form, a list — paste it
+between the two marked lines in the middle of `index.html`.
+
+### The one tip that changes everything
+
+The weakest line in most people's spec is **"What it looks like,"** because
+it's tempting to write moods: *"forest aesthetic with beach vibes."* Models
+turn moods into generic layouts.
+
+Write structure instead:
+
+> Sections in this order: hero, story, three highlights, contact. One accent
+> color, deep green. Full-height hero, lots of whitespace. Should look like a
+> clean personal site, not a resume.
+
+Same six lines. Completely different result.
 
 ---
 
@@ -94,10 +144,3 @@ That comparison is the entire lesson.
 | **Cannot find the pencil icon** | Click the file name first, *then* look at the top right of the file box. |
 | **No laptop** | Pair up with whoever is next to you. Put both names in the footer and both of you ship it. |
 
----
-
-## Ask
-
-Post in **#help** in the CPVC Slack. No question is too basic — half the room
-is doing this for the first time today, and the other half was doing it for the
-first time last semester.
