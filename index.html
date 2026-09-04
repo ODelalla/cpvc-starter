@@ -1,155 +1,583 @@
 <!DOCTYPE html>
-<!--
-  ================================================================
-  READ THIS BEFORE YOU PASTE ANYTHING
-
-  When Gemini gives you a page, you do NOT paste it into a part of
-  this file. You replace the entire file.
-
-  Click into the editor, press Ctrl+A (Cmd+A on Mac), press Delete,
-  then paste. Everything here is meant to be thrown away.
-
-  Do that only AFTER your live link works. Get the link first.
-  ================================================================
--->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My first site</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0d1d30;
-    --card: #142a44;
-    --line: #27466a;
-    --aqua: #6de1d7;
-    --text: #ffffff;
-    --muted: #94a9bf;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--navy);
-    color: var(--text);
-    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 6vh 20px;
-  }
-  main { width: 100%; max-width: 640px; }
-  .badge {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin-bottom: 18px;
-  }
-  h1 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 800;
-    font-size: clamp(38px, 9vw, 68px);
-    letter-spacing: -0.05em;
-    line-height: 1.02;
-    margin: 0 0 8px;
-  }
-  .name {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: clamp(18px, 4vw, 24px);
-    letter-spacing: -0.04em;
-    color: var(--aqua);
-    margin: 0 0 24px;
-  }
-  p.lead { font-size: 18px; color: var(--muted); margin: 0 0 34px; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 26px 28px;
-    margin-bottom: 18px;
-  }
-  .card h2 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin: 0 0 16px;
-  }
-  ol { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 12px; color: var(--muted); }
-  li:last-child { margin-bottom: 0; }
-  li b { color: var(--text); font-weight: 700; }
-  code {
-    font-family: ui-monospace, "SF Mono", Consolas, monospace;
-    font-size: 0.92em;
-    background: #0a1727;
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    padding: 1px 6px;
-    color: var(--aqua);
-  }
-  a { color: var(--aqua); }
-  footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #6e839a;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garrett's Day in the Life | Protect Your Peace 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --pink-primary: #FF70A6;
+      --pink-dark: #4A1228;
+      --pink-medium: #8A2D52;
+      --pink-soft: #FFD6E0;
+      --pink-light: #FFF0F4;
+      --pink-card: #FFFFFF;
+      --pink-badge: #FFE3EC;
+      --pink-border: #F8C3D3;
+      --text-dark: #2D0B18;
+      --text-muted: #7A4258;
+      --radius: 20px;
+      --shadow: 0 10px 30px -5px rgba(255, 112, 166, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--pink-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    nav {
+      background-color: var(--pink-dark);
+      color: #ffffff;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(74, 18, 40, 0.15);
+    }
+
+    .nav-container {
+      max-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span {
+      color: var(--pink-primary);
+    }
+
+    .nav-tag {
+      font-size: 0.75rem;
+      background: rgba(255, 112, 166, 0.25);
+      color: var(--pink-soft);
+      border: 1px solid rgba(255, 112, 166, 0.4);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--pink-dark) 0%, #300A19 100%);
+      color: #FFFFFF;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--pink-primary) 0%, var(--pink-soft) 100%);
+    }
+
+    .header-container {
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-avatar-wrapper {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 18px;
+      position: relative;
+    }
+
+    .profile-avatar-svg {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 4px solid var(--pink-soft);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      background: var(--pink-soft);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(255, 214, 224, 0.2);
+      color: var(--pink-soft);
+      border: 1px solid var(--pink-border);
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      font-size: 1.15rem;
+      color: var(--pink-soft);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: -35px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stats-card {
+      background: var(--pink-card);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 35px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--pink-border);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-item h3 {
+      font-size: 1.35rem;
+      color: var(--pink-dark);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .stat-item p {
+      font-size: 0.78rem;
+      color: var(--pink-medium);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    .post {
+      background: var(--pink-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--pink-border);
+      padding: 32px;
+      margin-bottom: 35px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25 ease, box-shadow 0.25s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px -5px rgba(255, 112, 166, 0.2);
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .time-tag {
+      background-color: var(--pink-badge);
+      color: var(--pink-dark);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--pink-border);
+    }
+
+    .location-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .post h2 {
+      font-size: 1.6rem;
+      color: var(--pink-dark);
+      margin-bottom: 14px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .post p {
+      color: var(--text-dark);
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .post-picture-container {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 20px 0;
+      border: 2px solid var(--pink-border);
+      box-shadow: 0 6px 18px rgba(74, 18, 40, 0.06);
+      background-color: var(--pink-soft);
+      position: relative;
+    }
+
+    .post-picture-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .picture-caption {
+      background: var(--pink-badge);
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--pink-dark);
+      text-align: center;
+      border-top: 1px solid var(--pink-border);
+    }
+
+    .peace-quote {
+      background-color: var(--pink-badge);
+      border-left: 4px solid var(--pink-primary);
+      padding: 18px 20px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 20px;
+      color: var(--pink-dark);
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .peace-quote strong {
+      display: block;
+      margin-bottom: 4px;
+      font-style: normal;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--pink-medium);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--pink-border);
+    }
+
+    footer strong {
+      color: var(--pink-dark);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .post { padding: 22px; }
+      .stats-card { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .post-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-<main>
 
-  <span class="badge">Cal Poly Vibe Coding &middot; Session 01</span>
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        Garrett<span>SLO</span> 🌸
+      </a>
+      <span class="nav-tag">PROTECT YOUR PEACE ✨</span>
+    </div>
+  </nav>
 
-  <h1>It&rsquo;s live.</h1>
+  <header>
+    <div class="header-container">
+      <div class="profile-avatar-wrapper">
+        <svg class="profile-avatar-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="60" fill="#FFD6E0" />
+          <circle cx="60" cy="45" r="22" fill="#FFB3C6" />
+          <!-- Garrett Profile Avatar -->
+          <path d="M 40,32 C 40,20 80,20 80,32 C 82,38 78,42 80,45 C 75,32 45,32 40,45 Z" fill="#4A1228" />
+          <circle cx="53" cy="45" r="3" fill="#4A1228" />
+          <circle cx="67" cy="45" r="3" fill="#4A1228" />
+          <path d="M 55,54 Q 60,59 65,54" stroke="#4A1228" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          <path d="M 32,100 C 32,75 88,75 88,100 Z" fill="#FF70A6" />
+          <path d="M 50,78 L 60,92 L 70,78" fill="#FFFFFF" opacity="0.8" />
+        </svg>
+      </div>
+      <span class="badge">🌸 Cal Poly SLO • Mindful Living</span>
+      <h1>Garrett's Day in the Life</h1>
+      <p>Navigating Computer Engineering at Cal Poly with soft energy, self-care, and a commitment to protecting my peace.</p>
+    </div>
+  </header>
 
-  <!-- Step 5: change the name below to yours, then commit. -->
-  <p class="name">Built by YOUR NAME HERE</p>
+  <main class="container">
 
-  <p class="lead">
-    This page is on the internet. Anyone you send this link to can open it,
-    on any device, right now. You made that happen in about five minutes.
-  </p>
+    <section class="stats-card">
+      <div class="stat-item">
+        <h3>7:15 AM</h3>
+        <p>Quiet Alarm 🌸</p>
+      </div>
+      <div class="stat-item">
+        <h3>20 Mins</h3>
+        <p>Morning Walk 🌿</p>
+      </div>
+      <div class="stat-item">
+        <h3>1 Hour</h3>
+        <p>Unplugged Lunch 🍓</p>
+      </div>
+      <div class="stat-item">
+        <h3>9:30 PM</h3>
+        <p>Digital Shutdown 🎀</p>
+      </div>
+    </section>
 
-  <div class="card">
-    <h2>Three things, in this order</h2>
-    <ol>
-      <li><b>Put your name on it.</b> Edit <code>index.html</code>, change
-        YOUR NAME HERE above, commit, refresh this page.</li>
-      <li><b>Submit this link.</b> Go to
-        <a href="https://www.calpolyvibecoding.com/">calpolyvibecoding.com</a>,
-        make an account, and paste this URL in. That is how you get counted,
-        and how Claude seats get assigned.</li>
-      <li><b>Then build.</b> Open Gemini, get a page, and replace this entire
-        file with it.</li>
-    </ol>
-  </div>
+    <div class="timeline">
 
-  <div class="card">
-    <h2>How to replace this page</h2>
-    <ol>
-      <li>Copy what Gemini gives you with the <b>copy button</b> on the code
-        block. Do not click and drag.</li>
-      <li>Open <code>index.html</code> here and click the pencil icon.</li>
-      <li><b>Ctrl+A</b> (<b>Cmd+A</b> on Mac), then <b>Delete</b>. All of it.
-        Yes, really.</li>
-      <li>Paste, commit, refresh.</li>
-    </ol>
-  </div>
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">🌸 07:15 AM</span>
+          <span class="location-tag">📍 Grand Avenue & Scout Coffee Co.</span>
+        </div>
+        <h2>Starting Slow: Gentle Walk & Pink Matcha</h2>
+        <p>Engineering coursework gets demanding fast if you wake up checking notifications. To protect my mental peace, I stick to a strict boundary: <strong>no email or phone screen for the first 30 minutes awake</strong>. I strolled down Grand Ave under the soft morning light, grabbed an iced strawberry matcha latte at Scout Coffee in the UU, and reflected on my goals for the day.</p>
+        
+        <div class="post-picture-container">
+          <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="320" fill="#FFE5EC"/>
+            <circle cx="520" cy="60" r="45" fill="#FFB3C6" opacity="0.5"/>
+            <!-- Scout Coffee Shop Scene -->
+            <rect x="50" y="120" width="500" height="200" rx="12" fill="#FFFFFF"/>
+            <rect x="70" y="140" width="180" height="120" rx="8" fill="#FFD6E0" opacity="0.6"/>
+            <!-- Window text -->
+            <text x="160" y="205" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#4A1228" text-anchor="middle">SCOUT COFFEE</text>
+            <!-- Garrett Character in Scene -->
+            <g transform="translate(360, 90)">
+              <!-- Hair -->
+              <path d="M 40,25 C 35,10 85,10 80,25 C 85,32 80,38 82,42 C 75,25 45,25 38,42 Z" fill="#4A1228"/>
+              <circle cx="60" cy="45" r="22" fill="#FFC2D1"/>
+              <!-- Glasses -->
+              <circle cx="52" cy="44" r="6" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <circle cx="68" cy="44" r="6" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <line x1="58" y1="44" x2="62" y2="44" stroke="#4A1228" stroke-width="2"/>
+              <!-- Smile -->
+              <path d="M 54,54 Q 60,59 66,54" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <!-- Body / Pink Hoodie -->
+              <path d="M 30,110 C 30,78 90,78 90,110 Z" fill="#FF70A6"/>
+              <!-- Matcha Cup -->
+              <rect x="72" y="75" width="18" height="28" rx="4" fill="#FFFFFF" stroke="#FF70A6" stroke-width="2"/>
+              <path d="M 74,80 L 88,80" stroke="#FF85A1" stroke-width="8"/>
+              <line x1="81" y1="65" x2="81" y2="75" stroke="#FF4081" stroke-width="3"/>
+            </g>
+          </svg>
+          <div class="picture-caption">📷 Garrett grabbing his morning strawberry matcha at Scout Coffee</div>
+        </div>
+
+        <div class="peace-quote">
+          <strong>Peace Pillar #1:</strong> "Guard your first waking hour. Peace is created before the day demands your energy."
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">🌸 10:30 AM</span>
+          <span class="location-tag">📍 Bonderson Engineering Center</span>
+        </div>
+        <h2>Mindful Focus: Computer Engineering Lab</h2>
+        <p>In our hardware lab today, we worked on breadboarding circuit components and configuring microcontrollers. When code throws errors or circuits fail, it's easy to get frustrated. I protect my peace here by practicing mindful pauses—taking a deep breath, stepping back for 60 seconds, and treating debugging as a peaceful logic game rather than a crisis.</p>
+        
+        <div class="post-picture-container">
+          <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="320" fill="#FFEDF2"/>
+            <!-- Lab Desk -->
+            <rect x="40" y="210" width="520" height="90" rx="10" fill="#4A1228"/>
+            <!-- Laptop with pink code UI -->
+            <rect x="180" y="130" width="140" height="90" rx="6" fill="#2A0815"/>
+            <rect x="188" y="138" width="124" height="74" fill="#5C1D36"/>
+            <line x1="195" y1="150" x2="250" y2="150" stroke="#FF70A6" stroke-width="3"/>
+            <line x1="195" y1="162" x2="280" y2="162" stroke="#FFB3C6" stroke-width="3"/>
+            <line x1="195" y1="174" x2="230" y2="174" stroke="#FF85A1" stroke-width="3"/>
+            <polygon points="160,220 340,220 320,210 180,210" fill="#8A2D52"/>
+            <!-- Circuit Board -->
+            <rect x="360" y="190" width="90" height="30" fill="#FF70A6" rx="4"/>
+            <circle cx="380" cy="205" r="4" fill="#FFFFFF"/>
+            <circle cx="400" cy="205" r="4" fill="#FFD6E0"/>
+            <circle cx="420" cy="205" r="4" fill="#FFFFFF"/>
+            <!-- Garrett in Lab -->
+            <g transform="translate(70, 95)">
+              <circle cx="60" cy="45" r="22" fill="#FFC2D1"/>
+              <path d="M 40,25 C 35,10 85,10 80,25 C 85,32 80,38 82,42 C 75,25 45,25 38,42 Z" fill="#4A1228"/>
+              <circle cx="52" cy="44" r="5" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <circle cx="68" cy="44" r="5" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <path d="M 54,54 Q 60,58 66,54" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <path d="M 30,110 C 30,78 90,78 90,110 Z" fill="#FFB7C5"/>
+            </g>
+          </svg>
+          <div class="picture-caption">📷 Garrett staying calm & focused during microcontrollers lab</div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">🌸 01:00 PM</span>
+          <span class="location-tag">📍 Leaning Pines Arboretum / Poly Canyon</span>
+        </div>
+        <h2>Unplugged Midday Reset in Nature</h2>
+        <p>Instead of eating in a crowded dining hall while staring at my phone, I walked over to the quiet gardens near Poly Canyon. Sitting under the eucalyptus trees with a fresh poke bowl and no screens gives my brain time to process and recharge. Nature is Cal Poly's best remedy for academic burnout!</p>
+
+        <div class="post-picture-container">
+          <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="320" fill="#FFE3EC"/>
+            <!-- Eucalyptus Trees Background -->
+            <path d="M 50,320 C 50,150 120,80 150,40 C 180,80 250,150 250,320 Z" fill="#FFB7C5" opacity="0.6"/>
+            <path d="M 380,320 C 380,130 450,60 480,20 C 510,60 580,130 580,320 Z" fill="#FF85A1" opacity="0.4"/>
+            <!-- Grass mound -->
+            <path d="M 0,250 Q 300,200 600,250 L 600,320 L 0,320 Z" fill="#4A1228"/>
+            <!-- Garrett sitting on grass -->
+            <g transform="translate(240, 130)">
+              <circle cx="60" cy="45" r="22" fill="#FFC2D1"/>
+              <path d="M 40,25 C 35,10 85,10 80,25 C 85,32 80,38 82,42 C 75,25 45,25 38,42 Z" fill="#FF70A6"/>
+              <circle cx="52" cy="44" r="5" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <circle cx="68" cy="44" r="5" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <path d="M 55,54 Q 60,60 65,54" stroke="#4A1228" stroke-width="2" fill="none"/>
+              <path d="M 35,80 C 35,68 85,68 85,80 L 95,120 L 25,120 Z" fill="#FFD6E0"/>
+            </g>
+          </svg>
+          <div class="picture-caption">📷 Garrett taking an unplugged lunch break surrounded by greenery</div>
+        </div>
+
+        <div class="peace-quote">
+          <strong>Peace Pillar #2:</strong> "Stepping outside for 30 minutes resets your nervous system faster than scrolling ever will."
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">🌸 05:15 PM</span>
+          <span class="location-tag">📍 The Cal Poly "P" Trail</span>
+        </div>
+        <h2>Golden Hour Sunset Hike Above SLO</h2>
+        <p>Physical movement is my favorite way to close out the school day. Once my last class wrapped up, a couple of close friends and I hiked up to the Cal Poly "P". Looking out over San Luis Obispo as the sky turns shades of soft pink and rose gold puts everything into perspective—reminding me that well-being always comes before grades.</p>
+
+        <div class="post-picture-container">
+          <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pinkSunset" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FF70A6"/>
+                <stop offset="50%" stop-color="#FFB7C5"/>
+                <stop offset="100%" stop-color="#FFE3EC"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="320" fill="url(#pinkSunset)"/>
+            <!-- Sun -->
+            <circle cx="300" cy="160" r="50" fill="#FFFFFF" opacity="0.9"/>
+            <!-- Mountains -->
+            <path d="M 0,220 L 150,140 L 280,210 L 450,110 L 600,220 L 600,320 L 0,320 Z" fill="#5C1D36"/>
+            <path d="M 0,260 L 200,190 L 380,250 L 600,180 L 600,320 L 0,320 Z" fill="#3A0C1E"/>
+            <!-- The Cal Poly P -->
+            <text x="470" y="210" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="48" fill="#FFFFFF" opacity="0.85">P</text>
+            <!-- Garrett outline at summit -->
+            <g transform="translate(180, 110)">
+              <circle cx="20" cy="20" r="12" fill="#FFD6E0"/>
+              <path d="M 8,50 C 8,30 32,30 32,50 L 32,80 L 8,80 Z" fill="#FF70A6"/>
+            </g>
+          </svg>
+          <div class="picture-caption">📷 Garrett taking in the pink sunset from the top of the Cal Poly "P"</div>
+        </div>
+      </article>
+
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">🌸 09:00 PM</span>
+          <span class="location-tag">📍 Evening Unwind & Cozy Space</span>
+        </div>
+        <h2>Evening Digital Sunset & Warm Tea</h2>
+        <p>By 9:00 PM, my laptop and study materials are put away. Protecting sleep quality is non-negotiable. I like to dim the room lights, light a lavender candle, read a chapter of fiction, and enjoy a warm cup of chamomile tea. Rest is essential productivity!</p>
+        
+        <div class="post-picture-container">
+          <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="320" fill="#2D0B18"/>
+            <!-- Warm room glow -->
+            <circle cx="300" cy="160" r="180" fill="#5C1D36" opacity="0.5"/>
+            <!-- Window with Moon -->
+            <rect x="420" y="50" width="120" height="150" rx="10" fill="#1A050E" stroke="#FF70A6" stroke-width="2"/>
+            <path d="M 480,80 A 20,20 0 1 0 500,100 A 15,15 0 0 1 480,80 Z" fill="#FFD6E0"/>
+            <!-- Cozy Bed / Couch -->
+            <rect x="80" y="200" width="440" height="100" rx="16" fill="#FFB7C5"/>
+            <!-- Garrett reading -->
+            <g transform="translate(160, 120)">
+              <circle cx="60" cy="45" r="22" fill="#FFC2D1"/>
+              <path d="M 40,25 C 35,10 85,10 80,25 C 85,32 80,38 82,42 C 75,25 45,25 38,42 Z" fill="#2D0B18"/>
+              <!-- Glasses -->
+              <circle cx="52" cy="44" r="5" stroke="#2D0B18" stroke-width="2" fill="none"/>
+              <circle cx="68" cy="44" r="5" stroke="#2D0B18" stroke-width="2" fill="none"/>
+              <!-- Soft closed eyes / relaxed smile -->
+              <path d="M 54,54 Q 60,58 66,54" stroke="#2D0B18" stroke-width="2" fill="none"/>
+              <!-- Blanket/Hoodie -->
+              <path d="M 30,100 C 30,78 90,78 90,100 Z" fill="#FF70A6"/>
+              <!-- Book -->
+              <path d="M 45,85 L 60,90 L 75,85 L 75,105 L 60,110 L 45,105 Z" fill="#FFFFFF"/>
+            </g>
+          </svg>
+          <div class="picture-caption">📷 Garrett unwinding with a book and tea before bed</div>
+        </div>
+
+        <div class="peace-quote">
+          <strong>Peace Pillar #3:</strong> "Rest isn't a reward for finishing your work; it's the foundation that makes your work possible."
+        </div>
+      </article>
+
+    </div>
+  </main>
 
   <footer>
-    Nothing on this page is precious. It exists so the link has something to
-    show before you have something of your own.
+    <p>Living & learning mindfully at <strong>Cal Poly San Luis Obispo</strong> 🌸 Go Mustangs! 🐎</p>
   </footer>
 
-</main>
 </body>
 </html>
