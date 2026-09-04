@@ -1,155 +1,482 @@
-<!DOCTYPE html>
-<!--
-  ================================================================
-  READ THIS BEFORE YOU PASTE ANYTHING
-
-  When Gemini gives you a page, you do NOT paste it into a part of
-  this file. You replace the entire file.
-
-  Click into the editor, press Ctrl+A (Cmd+A on Mac), press Delete,
-  then paste. Everything here is meant to be thrown away.
-
-  Do that only AFTER your live link works. Get the link first.
-  ================================================================
--->
+!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My first site</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0d1d30;
-    --card: #142a44;
-    --line: #27466a;
-    --aqua: #6de1d7;
-    --text: #ffffff;
-    --muted: #94a9bf;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--navy);
-    color: var(--text);
-    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 6vh 20px;
-  }
-  main { width: 100%; max-width: 640px; }
-  .badge {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin-bottom: 18px;
-  }
-  h1 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 800;
-    font-size: clamp(38px, 9vw, 68px);
-    letter-spacing: -0.05em;
-    line-height: 1.02;
-    margin: 0 0 8px;
-  }
-  .name {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: clamp(18px, 4vw, 24px);
-    letter-spacing: -0.04em;
-    color: var(--aqua);
-    margin: 0 0 24px;
-  }
-  p.lead { font-size: 18px; color: var(--muted); margin: 0 0 34px; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 26px 28px;
-    margin-bottom: 18px;
-  }
-  .card h2 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin: 0 0 16px;
-  }
-  ol { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 12px; color: var(--muted); }
-  li:last-child { margin-bottom: 0; }
-  li b { color: var(--text); font-weight: 700; }
-  code {
-    font-family: ui-monospace, "SF Mono", Consolas, monospace;
-    font-size: 0.92em;
-    background: #0a1727;
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    padding: 1px 6px;
-    color: var(--aqua);
-  }
-  a { color: var(--aqua); }
-  footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #6e839a;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garrett's Day in the Life | Cal Poly SLO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --poly-green: #003831;
+      --poly-green-light: #00544a;
+      --poly-gold: #C69214;
+      --poly-gold-light: #f7e7b9;
+      --bg-color: #F4F6F4;
+      --card-bg: #FFFFFF;
+      --text-main: #1C2421;
+      --text-muted: #52605B;
+      --border-color: #E2E8E5;
+      --accent-gray: #EEF2F0;
+      --radius: 16px;
+      --shadow: 0 10px 30px -5px rgba(0, 56, 49, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    /* Top Navigation Bar */
+    nav {
+      background-color: var(--poly-green);
+      color: #ffffff;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span {
+      color: var(--poly-gold);
+    }
+
+    .nav-tag {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Header & Hero */
+    header {
+      background: linear-gradient(135deg, var(--poly-green) 0%, #00221e 100%);
+      color: #FFFFFF;
+      padding: 70px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--poly-gold);
+    }
+
+    .header-container {
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background-color: var(--poly-gold);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      border: 4px solid #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(198, 146, 20, 0.25);
+      color: var(--poly-gold);
+      border: 1px solid var(--poly-gold);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      font-size: 1.15rem;
+      color: #D1E0DC;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* Main Content Area */
+    .container {
+      max-width: 800px;
+      margin: -30px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Quick Stats Bar */
+    .stats-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 35px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-item h3 {
+      font-size: 1.5rem;
+      color: var(--poly-green);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .stat-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* Article Timeline Layout */
+    .timeline {
+      position: relative;
+    }
+
+    .post {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px -5px rgba(0, 56, 49, 0.12);
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .time-tag {
+      background-color: var(--accent-gray);
+      color: var(--poly-green);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .location-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .post h2 {
+      font-size: 1.6rem;
+      color: var(--poly-green);
+      margin-bottom: 14px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .post p {
+      color: var(--text-main);
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Styled Media Components */
+    .post-graphic {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--poly-green);
+      margin-top: 20px;
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .graphic-1 {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    }
+
+    .graphic-2 {
+      background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    }
+
+    .graphic-3 {
+      background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+    }
+
+    .graphic-icon {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .graphic-caption {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--poly-green);
+    }
+
+    .graphic-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Highlight box inside a post */
+    .takeaway-box {
+      background-color: var(--accent-gray);
+      border-left: 4px solid var(--poly-gold);
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      margin-top: 15px;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer strong {
+      color: var(--poly-green);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .post {
+        padding: 22px;
+      }
+
+      .stats-card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-<main>
 
-  <span class="badge">Cal Poly Vibe Coding &middot; Session 01</span>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        Garrett<span>SLO</span>
+      </a>
+      <span class="nav-tag">MUSTANG LIFE</span>
+    </div>
+  </nav>
 
-  <h1>It&rsquo;s live.</h1>
+  <!-- Hero Header -->
+  <header>
+    <div class="header-container">
+      <div class="profile-avatar">👨‍💻</div>
+      <span class="badge">Learn By Doing</span>
+      <h1>A Day in the Life at Cal Poly</h1>
+      <p>Follow along for a typical Thursday in San Luis Obispo—balancing computer engineering labs, coffee runs, and central coast sun.</p>
+    </div>
+  </header>
 
-  <!-- Step 5: change the name below to yours, then commit. -->
-  <p class="name">Built by YOUR NAME HERE</p>
+  <!-- Main Content Container -->
+  <main class="container">
 
-  <p class="lead">
-    This page is on the internet. Anyone you send this link to can open it,
-    on any device, right now. You made that happen in about five minutes.
-  </p>
+    <!-- Quick Stats Bar -->
+    <section class="stats-card">
+      <div class="stat-item">
+        <h3>7:30 AM</h3>
+        <p>First Alarm</p>
+      </div>
+      <div class="stat-item">
+        <h3>14,200</h3>
+        <p>Steps Taken</p>
+      </div>
+      <div class="stat-item">
+        <h3>3 Hours</h3>
+        <p>Hardware Lab</p>
+      </div>
+      <div class="stat-item">
+        <h3>2 Cups</h3>
+        <p>Scout Coffee</p>
+      </div>
+    </section>
 
-  <div class="card">
-    <h2>Three things, in this order</h2>
-    <ol>
-      <li><b>Put your name on it.</b> Edit <code>index.html</code>, change
-        YOUR NAME HERE above, commit, refresh this page.</li>
-      <li><b>Submit this link.</b> Go to
-        <a href="https://www.calpolyvibecoding.com/">calpolyvibecoding.com</a>,
-        make an account, and paste this URL in. That is how you get counted,
-        and how Claude seats get assigned.</li>
-      <li><b>Then build.</b> Open Gemini, get a page, and replace this entire
-        file with it.</li>
-    </ol>
-  </div>
+    <!-- Blog Posts / Timeline -->
+    <div class="timeline">
 
-  <div class="card">
-    <h2>How to replace this page</h2>
-    <ol>
-      <li>Copy what Gemini gives you with the <b>copy button</b> on the code
-        block. Do not click and drag.</li>
-      <li>Open <code>index.html</code> here and click the pencil icon.</li>
-      <li><b>Ctrl+A</b> (<b>Cmd+A</b> on Mac), then <b>Delete</b>. All of it.
-        Yes, really.</li>
-      <li>Paste, commit, refresh.</li>
-    </ol>
-  </div>
+      <!-- Post 1 -->
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">⏰ 08:15 AM</span>
+          <span class="location-tag">📍 University Union & Dexter Lawn</span>
+        </div>
+        <h2>Morning Coffee & Walk Across Campus</h2>
+        <p>The morning fog was just starting to lift over the St. Lucia Mountains as I walked from my apartment down Grand Avenue. My first stop on campus is always <strong>Scout Coffee</strong> in the UU. I grabbed a hot honey lavender latte and a buttermilk biscuit before heading across Dexter Lawn toward my 9:00 AM lecture.</p>
+        
+        <div class="post-graphic graphic-1">
+          <div class="graphic-icon">☕️</div>
+          <div class="graphic-caption">Scout Coffee Co. @ The UU</div>
+          <div class="graphic-sub">Fueling up before morning classes</div>
+        </div>
+      </article>
 
+      <!-- Post 2 -->
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">⏰ 10:10 AM</span>
+          <span class="location-tag">📍 Bonderson Projects Center</span>
+        </div>
+        <h2>Building Circuits: "Learn by Doing" in Action</h2>
+        <p>Directly after lecture, I headed into the Bonderson Engineering Building for my microcontroller systems lab. Today’s goal was to get our FPGA boards communicating with external sensor arrays. Cal Poly’s motto isn’t just marketing—we were literally soldering components and debugging logic gates within 15 minutes of class starting.</p>
+        
+        <div class="takeaway-box">
+          "The best part about the lab spaces here is that you're trusted with real hardware right from week one. If a circuit blows a fuse, you figure out why and fix it yourself."
+        </div>
+
+        <div class="post-graphic graphic-2">
+          <div class="graphic-icon">🔬</div>
+          <div class="graphic-caption">Microcontroller Lab Bench</div>
+          <div class="graphic-sub">Breadboards, oscilloscopes, and C code</div>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">⏰ 01:15 PM</span>
+          <span class="location-tag">📍 1901 Marketplace</span>
+        </div>
+        <h2>Lunch Break & Group Study</h2>
+        <p>After wrapping up lab, I met up with a couple of classmates at the new 1901 Marketplace for lunch. Grabbed a bowl from the Mediterranean stand and snagged an outdoor table in the shade. We spent about an hour eating and reviewing our upcoming linear algebra midterm before afternoon classes.</p>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">⏰ 05:30 PM</span>
+          <span class="location-tag">📍 The Cal Poly "P" Trail</span>
+        </div>
+        <h2>Golden Hour Sunset Hike</h2>
+        <p>Once my final lecture ended at 5:00 PM, I met a few friends behind the dorms to hike up to the Cal Poly "P". It's a steep 15-minute climb, but the view of San Luis Obispo and Bishop Peak at golden hour makes it 100% worth it every single time. It's the ultimate way to decompress after a long day of coding and lectures.</p>
+
+        <div class="post-graphic graphic-3">
+          <div class="graphic-icon">⛰️</div>
+          <div class="graphic-caption">Overlook from the Cal Poly "P"</div>
+          <div class="graphic-sub">Panoramic view of SLO Valley</div>
+        </div>
+      </article>
+
+      <!-- Post 5 -->
+      <article class="post">
+        <div class="post-header">
+          <span class="time-tag">⏰ 08:00 PM</span>
+          <span class="location-tag">📍 Kennedy Library / Downtown SLO</span>
+        </div>
+        <h2>Evening Wrap-up & Thursday Downtown</h2>
+        <p>Wrapped up the evening with a quick two-hour study session at the library to stay ahead on project assignments. Since it's Thursday, a group of us ended the night heading downtown to check out the iconic Farmers' Market on Higuera Street for some fresh fruit and hot BBQ sliders.</p>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
   <footer>
-    Nothing on this page is precious. It exists so the link has something to
-    show before you have something of your own.
+    <p>Documenting life at <strong>Cal Poly San Luis Obispo</strong> • Go Mustangs! 🐎</p>
   </footer>
 
-</main>
 </body>
 </html>
